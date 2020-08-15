@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Simple Calculator</title>
+		<meta name="author" content="ZeroMaster28"/>
+		<meta charset="UTF-8"/>
+		<meta name="keywords" content="HTML, CSS, JavaScript, Project, Calculator"/>
+		<link rel="stylesheet" href="style.css">
+		<script src="calc.js"></script>
+	</head>
+	<body>
+		<h4><span>This is a calculator</span></h4>
+		<h5><span>Have Fun!<span></h5>
+		<table class="calc_body">
+			<tr>
+				<td colspan="4" id="calc_screen"></td>
+			</tr>
+			<tr>
+				<td class="calc_button" onclick="calculator.putNumber(7);"> 7 </td>
+				<td class="calc_button" onclick="calculator.putNumber(8);"> 8 </td>
+				<td class="calc_button" onclick="calculator.putNumber(9);"> 9 </td>
+				<td  class="calc_button" onclick="calculator.putSymbol('+');"> + </td>
+			<tr>
+			<tr>
+				<td class="calc_button" onclick="calculator.putNumber(4);"> 4 </td>
+				<td class="calc_button" onclick="calculator.putNumber(5);"> 5 </td>
+				<td class="calc_button" onclick="calculator.putNumber(6);"> 6 </td>
+				<td class="calc_button" onclick="calculator.putSymbol('-');"> - </td>
+			<tr>
+			<tr>
+				<td class="calc_button" onclick="calculator.putNumber(1);"> 1 </td>
+				<td class="calc_button" onclick="calculator.putNumber(2);"> 2 </td>
+				<td class="calc_button" onclick="calculator.putNumber(3);"> 3 </td>
+				<td class="calc_button" onclick="calculator.putSymbol('*');"> * </td>
+			<tr>
+			<tr>
+				<td class="calc_button" onclick="calculator.putNumber(0);"> 0 </td>
+				<td class="calc_button" onclick="calculator.putSymbol('.');"> . </td>
+				<td class="calc_button" onclick="calculator.clearOrCompute()"> = </td>
+				<td class="calc_button" onclick="calculator.putSymbol('/');"> / </td>
+			<tr>
+		<table>
+		<script type="text/javascript">
+		var calculator = new Calculator("0.0");
+		calculator.setLimit(40);
+		</script>
+	</body>
+</html>
