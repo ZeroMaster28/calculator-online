@@ -9,7 +9,7 @@ function Calculator(symbolsLimit)
 	// flag indicating whether comma for current number is present
 	this.hasComma = false;
 	// first number
-	this.firstNumber = "";
+	this.firstNumber = "0.0";
 	//second number
 	this.secondNumber = "";
 	//operation symbol
@@ -19,7 +19,7 @@ function Calculator(symbolsLimit)
 		document.getElementById("calc_screen").innerHTML = value;
 	}
 	// setting initial state of the screen
-	this.setScreenValue("0.0");
+	this.setScreenValue(this.firstNumber);
 	// initialization of the method that refreshes the screen after some changes
 	this.refresh = function(){
 		this.setScreenValue(this.firstNumber + this.operation + this.secondNumber);
@@ -28,10 +28,12 @@ function Calculator(symbolsLimit)
 	this.putNumber = function(number){
 		if(this.firstNumber.length + this.operation.length + this.secondNumber.length > this.symbolsLimit)
 			return;
-		if(parseInt(this.firstNumber) == 0)
-			this.firstNumber = number + "";
-		else if(this.operation == "")
-			this.firstNumber += number;
+		if(this.operation == ""){
+			if(this.firstNumber == "0.0")
+				this.firstNumber = number + "";
+			else
+				this.firstNumber += number;
+		}
 		else if(this.operaton != ""){
 			this.secondNumber += number;
 			this.canFindResult = true;
@@ -86,7 +88,7 @@ function Calculator(symbolsLimit)
 	}
 	// method that appends comma
 	this.putComma = function(){
-		if(this.hasComma || this.firstNumber == "" || this.firstNumber =="0.0") return; //states when comma cannot be put
+		if(this.hasComma || this.firstNumber == "" || this.firstNumber == "0.0") return; //states when comma cannot be put
 		if(this.operation == "")
 			this.firstNumber += ".";
 		else this.secondNumber += ".";
