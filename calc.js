@@ -64,7 +64,7 @@ function Calculator(symbolsLimit)
 		}
 		else if(this.operation == "/")
 		{
-			if(parseInt(this.secondNumber) == 0) return 0;
+			if(Math.abs(parseFloat(this.secondNumber)) <= 0.0000001) return 0;
 			return parseFloat(this.firstNumber) / parseFloat(this.secondNumber);
 		}
 	}
