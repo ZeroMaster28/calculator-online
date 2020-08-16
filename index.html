@@ -35,14 +35,11 @@
 			<tr>
 			<tr>
 				<td class="calc_button" onclick="calculator.putNumber(0);"> 0 </td>
-				<td class="calc_button" onclick="calculator.putSymbol('.');"> . </td>
+				<td class="calc_button" onclick="calculator.putComma();"> . </td>
 				<td class="calc_button" onclick="calculator.clearOrCompute()"> = </td>
 				<td class="calc_button" onclick="calculator.putSymbol('/');"> / </td>
 			<tr>
 		<table>
-		<script type="text/javascript">
-		var calculator = new Calculator("0.0");
-		calculator.setLimit(40);
-		</script>
+		<script type="text/javascript">var calculator = new Calculator(22);</script>
 	</body>
 </html>
